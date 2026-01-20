@@ -10,5 +10,28 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mypy>=1.19.1",
+    "pre-commit>=4.5.1",
     "pytest>=9.0.2",
+    "ruff>=0.14.13",
 ]
+
+# --- RUFF CONFIGURATION ---
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+# E, W - standard errors (pycodestyle)
+# F - logical errors (pyflakes)
+# I - imports sorting (isort)
+# B - bugs fixes (flake8-bugbear)
+# UP - syntax upgrade (pyupgrade)
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = []
+
+# --- MYPY CONFIGURATION ---
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
