@@ -1,5 +1,3 @@
-import pytest
-
 class TestExample:
-    def test_example(self):
+    def test_example(self) -> None:
         assert True
